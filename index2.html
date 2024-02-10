@@ -1,44 +1,56 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <style>
-    /* GLOBAL STYLES */
-    body {
-      background: #333;
-      padding-top: 5em;
-      display: flex;
-      justify-content: center;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transição de Opacidade</title>
+  <style>
+    .aparecer {
+      opacity: 1;
+      transition: opacity 0.5s ease-in-out;
     }
 
-    /* DEMO-SPECIFIC STYLES */
-    .typewriter h1 {
-      color: #fff;
-      font-family: monospace;
-      overflow: hidden; /* Ensures the content is not revealed until the animation */
-      border-right: .15em solid orange; /* The typwriter cursor */
-      white-space: nowrap; /* Keeps the content on a single line */
-      margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-      letter-spacing: .15em; /* Adjust as needed */
-      animation: 
-        typing 3.5s steps(30, end),
-        blink-caret .5s step-end infinite;
+    .esconder {
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
     }
-
-    /* The typing effect */
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
-    }
-
-    /* The typewriter cursor effect */
-    @keyframes blink-caret {
-      from, to { border-color: transparent }
-      50% { border-color: orange }
-    }
-</style>
+  </style>
 </head>
 <body>
-    <div class="typewriter">
-      <h1>Estou animando sua digitação.</h1>
-    </div>
+
+<h3 class="laranja">Qual a idade dos animais ⬎</h3>
+<p class="esconder">As raposas são animais mamíferos e onívoros pertencentes à família Canidae.
+São vulpídeos de porte médio, caracterizados por um focinho comprido e uma cauda longa e peluda.</p>
+
+<h3 class="laranja">Eles são fantásticos? ⬎</h3>
+<p class="esconder">Também apresentam como particularidade suas pupilas ovais, semelhantes às pupilas verticais
+dos felídeos.</p>
+
+<h3 class="laranja">Qual a diferença? ⬎</h3>
+<p class="esconder">As raposas são animais mamíferos e onívoros pertencentes à família Canidae.
+São vulpídeos de porte médio, caracterizados por um focinho comprido e uma cauda longa e peluda.</p>
+
+<h3 class="laranja">Como proteger? ⬎</h3>
+<p class="esconder">As raposas são animais mamíferos e onívoros pertencentes à família Canidae.
+São vulpídeos de porte médio, caracterizados por um focinho comprido e uma cauda longa e peluda.</p>
+
+<script>
+  // Seleciona todos os elementos h3 com a classe laranja
+  var elementosH3 = document.querySelectorAll('h3.laranja');
+
+  // Itera sobre os elementos h3 selecionados
+  elementosH3.forEach(function(elemento) {
+    // Adiciona um event listener para o evento de clique em cada elemento
+    elemento.addEventListener('click', function() {
+      // Encontrar o próximo elemento 'p'
+      var proximoParagrafo = this.nextElementSibling;
+
+      // Alternar as classes 'aparecer' e 'esconder'
+      proximoParagrafo.classList.toggle('aparecer');
+      proximoParagrafo.classList.toggle('esconder');
+    });
+  });
+</script>
+
 </body>
 </html>

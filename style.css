@@ -50,11 +50,13 @@ p{
     font-weight: bolder;
     background-color: #FFBB55;
     padding: 15px;
+    margin-right: 30px;
     border-radius: 5px;
     &:hover{
         cursor:pointer
     }
 }
+
 .azul{
     color: #EE5544;
     font-family: 'IBM Plex Mono', monospace;
@@ -87,6 +89,42 @@ a{
     text-decoration: none;
     color: black;
 }
+.scroll{
+    opacity: 0;
+    transform: translate3d(-30px, 0, 0);
+}
+.scrollativo{
+    opacity: 1 !important;
+    transform: translate3d(0, 0, 0);
+    transition: 1s;
+}
+.sumir{
+    height: 20px;
+    margin: 0px;
+    padding-bottom: 0px;
+    opacity: 0;
+    transform: translate3d(0,-20px,0);  
+    transition: 0.7s;
+}
+.aparecer{
+    height: 50px;
+    opacity: 1;
+    transform: translate3d(0,0,0);
+    padding-bottom: 15px !important;
+    transition: 0.7s;
+}
+.c42 h3.virar{
+    cursor: pointer;
+    margin-bottom: 0px;
+    z-index: 1;
+    &::after{
+        content: '⬎';
+        color: black;
+        margin-left: 15px;
+        transform: rotate(180deg) !important;
+    }
+}
+
 .c1{
     grid-row: 1;
     grid-column: 3/5;
@@ -181,11 +219,25 @@ a{
     grid-column: 3/4;
 
 }
-.c42 p{
+.c42 span.ativo{
+    transform: rotate(45deg);
+    color: black;
+}
+.c42 p{ 
     font-size: 1.2rem;
     font-family: Arial, Helvetica, sans-serif;
     padding-left: 60px;
-    padding-bottom: 30px;
+    cursor: default;
+}
+.c42 h3{
+    cursor: pointer;
+    margin-bottom: 0px;
+    z-index: 1;
+    &::after{
+        content: '⬎';
+        color: black;
+        margin-left: 15px;
+    }
 }
 .c5{
     grid-row: 6;

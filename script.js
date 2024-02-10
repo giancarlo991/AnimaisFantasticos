@@ -65,3 +65,56 @@ function remover(conteudo){
         conteudo.style.display = 'block'
     })
 }
+//scroll suave
+
+var link = document.querySelectorAll('.c11 a[href^="#"]')
+link.forEach(function(conteudo){
+    conteudo.addEventListener('click', scroll2)
+})
+function scroll2(event){
+    event.preventDefault()
+    var href = event.currentTarget.getAttribute('href')
+    var teste = document.querySelector(href)
+    // window.scrollTo({
+    //     top: teste.offsetTop,
+    //     behavior: "smooth"
+    // })
+    teste.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+    })
+}
+//aparecer e sumir elemento de FAQ
+var c42h3 = document.querySelectorAll('.c42 h3')
+c42h3.forEach(function(conteudo){
+    var proximo2 = conteudo.nextElementSibling
+    proximo2.classList.add('sumir')
+    conteudo.addEventListener('click', function(){
+        var proximo = this.nextElementSibling
+        proximo.classList.toggle('sumir')
+        proximo.classList.toggle('aparecer')
+        c42h3.classList.toggle('virar')
+    })
+    
+})
+var teste3 = document.querySelector('.c1')
+var divs = document.querySelectorAll('.scroll')
+
+function animacao2(){ 
+    var window3 = window.innerHeight * 0.7
+    divs.forEach(function(conteudo, index){
+       
+        var topo = conteudo.getBoundingClientRect().top - window3;
+        if(topo < 0){
+            conteudo.classList.remove('scroll')
+            conteudo.classList.add('scrollativo')
+        }
+});
+}
+window.addEventListener('scroll', animacao2)
+divs.forEach(function(conteudo, index){
+    if(index ==  0 || index == 1){
+        conteudo.classList.add('scrollativo')
+        conteudo.classList.remove('scroll')
+    }
+})
