@@ -93,7 +93,7 @@ c42h3.forEach(function(conteudo){
         var proximo = this.nextElementSibling
         proximo.classList.toggle('sumir')
         proximo.classList.toggle('aparecer')
-        c42h3.classList.toggle('virar')
+        conteudo.classList.toggle('virar')
     })
     
 })

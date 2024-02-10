@@ -114,17 +114,33 @@ a{
     transition: 0.7s;
 }
 .c42 h3.virar{
+    display: inline-block;
     cursor: pointer;
     margin-bottom: 0px;
     z-index: 1;
+    position: relative;
     &::after{
+        position: absolute;
         content: '⬎';
-        color: black;
+        transform:  rotate(-180deg);
+        transition: 0.4s
+    };
+}
+.c42 h3{
+    display: inline-block;
+    cursor: pointer;
+    margin-bottom: 0px;
+    z-index: 1;
+    position: relative;
+    &::after{
+        position: absolute;
+        content: '⬎';
+        height: 40px;
         margin-left: 15px;
-        transform: rotate(180deg) !important;
+        top: -5px;
+        transition: 0.4s;
     }
 }
-
 .c1{
     grid-row: 1;
     grid-column: 3/5;
@@ -229,16 +245,7 @@ a{
     padding-left: 60px;
     cursor: default;
 }
-.c42 h3{
-    cursor: pointer;
-    margin-bottom: 0px;
-    z-index: 1;
-    &::after{
-        content: '⬎';
-        color: black;
-        margin-left: 15px;
-    }
-}
+
 .c5{
     grid-row: 6;
     grid-column: 2/3;
