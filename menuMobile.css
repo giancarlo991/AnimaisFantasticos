@@ -1,0 +1,93 @@
+.menu{
+  display: none;
+  background-color: black;
+  color: white;
+  height: 45px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: bold;
+  font-size: 1.2rem;
+  z-index: 1000;
+  border: 0px solid black;
+  border-radius: 7px ;
+  position: relative;
+  &::before{
+    content: '☰';
+    height: 30px;
+    padding-right: 5px;
+    align-items: center;
+    position: relative;
+  }
+  &:hover{
+    cursor:pointer;
+  }
+}
+.virar{
+  transform: rotate(-180deg);
+}
+.ativar{
+  display: block !important;
+
+}
+.menu2{
+  color: white;
+  list-style: none;
+  background-color: #FFBB55;
+  font-family: 'IBM Plex Mono', monospace;
+  padding-right: 50px;
+  z-index: 100;
+  display: none;
+  position: absolute;
+  top: 0px;
+  margin: 0px;
+  padding: 10px;
+  margin-left: -20px;
+  width: 180px;
+  font-weight: 600;
+  font-size: 1.2rem;
+  animation: aparecer 0.3s forwards;
+  border-radius: 5px;
+  transform: translate3d(-100px, 0, 0);
+  transition: 1s transform;
+
+}
+.first{
+  padding-top: 70px;
+}
+
+.menu2 li{
+  margin: 10px;
+  margin-bottom: 30px;
+}
+.menu2 a{
+  position: relative;
+  padding: 12px;
+  &:hover{
+    color: white;
+  }
+}
+@keyframes aparecer{
+  from{
+    opacity: 0;
+    transform: translate3d(-100px, 0, 0px);
+  }
+  to{
+    opacity: 1;
+    transform: translate3d(-15px, 0,0);
+  }
+}
+@media (max-width: 600px){
+  .menu{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 115px;
+      margin-left: 10px;
+      padding-left: 6px;
+  }
+  .c11{
+      display: none !important;
+  }
+  .c1{
+      align-items: center;
+  }
+}

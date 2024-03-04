@@ -171,13 +171,14 @@ a{
 }
 .c11{
     align-items: center !important;
-    display: flex !important;
+    display: flex;
     gap: 20px !important;
     font-family: 'IBM Plex Mono', monospace;
-    font-weight: bold;
+    font-weight: bolder;
     font-size: 1rem;
     letter-spacing: .1em;
     color: white;
+    font-size: 1.1rem;
 }
 .c11 ul{
 
@@ -524,48 +525,5 @@ img{
         font-size: 1rem;
         letter-spacing: .1em;
         color: black;
-    }
-}
-.menu{
-
-    display: none;
-    background-color: black;
-    color: white;
-    height: 45px;
-    font-family: 'IBM Plex Mono', monospace;
-    font-weight: bold;
-    font-size: 1.2rem;
-    border: 3px solid #ffd089;
-    z-index: 1000;
-}
-.menu2{
-    color: white;
-    list-style: none;
-    background-color: black;
-    padding-right: 50px;
-    z-index: 100;
-    border: 2px solid blue;
-    display: none;
-
-}
-.ativo{
-    display: block;
-    transition: 1s;
-}
-.menu2 li{
-    margin: 10px;
-}
-
-@media (max-width: 570px){
-    .menu{
-        display: block;
-        margin-left: 10px;
-        padding-left: 6px;
-    }
-    .c11{
-        display: none;
-    }
-    .c1{
-        align-items: center;
     }
 }

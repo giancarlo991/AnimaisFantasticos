@@ -108,6 +108,8 @@ divs.forEach(function (conteudo, index) {
   }
 });
 
+//tooltip
+
 var imagem = document.querySelector('.c51 img');
 var tooltip = document.createElement('div');
 tooltip.id = 'tooltip';
@@ -136,3 +138,13 @@ elementos.forEach(function (conteudo, index) {
     dropdown[index].classList.remove('ativo');
   });
 });
+
+// menu mobile
+
+var menu = document.querySelector('.menu');
+var menu2 = document.querySelector('.menu2');
+var virar = document.querySelector('.menu span');
+menu.addEventListener('click', function (conteudo) {
+  menu2.classList.toggle('ativar');
+});
+menu2.addEventListener('clickout');
