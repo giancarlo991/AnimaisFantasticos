@@ -1,0 +1,59 @@
+.drop-menu{
+  display: none;
+  gap: 35px;
+  flex-direction: column;
+  padding: 25px 15px;
+  width: 587;
+  margin-top: 13px;
+  position: relative;
+  background-color: #E54;
+  &::before{
+    content: 'A';
+    display: block;
+    position: absolute;
+    top: -10px;
+    left: 18px;
+    color: #E54;
+    width: 0px;
+    height: 0px;
+    border-bottom: 10px solid #E54;
+    border-left: 10px solid transparent ;
+    border-right: 10px solid transparent ;
+  }
+}
+.drop-menu a{
+  cursor: pointer;
+  &:hover{
+    color: white !important;
+  }
+}
+.drop-menu li{
+  list-style: none;
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
+.pai{
+  margin-right: 0px !important;
+}
+.drop{
+  display: flex;
+  animation: dropdown 0.3s forwards;
+}
+@keyframes dropdown{
+  from{
+    opacity: 0;
+    transform: translate3d(0, 60px, 0);
+  }
+  to{
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+}
+.pai a{
+  cursor: pointer;
+  &:hover{
+    color: white !important;
+  }
+}
+

@@ -87,6 +87,9 @@ c42h3.forEach(function (conteudo) {
     conteudo.classList.toggle('virar');
   });
 });
+
+// scrollativo
+
 var teste3 = document.querySelector('.c1');
 var divs = document.querySelectorAll('.scroll');
 
@@ -147,4 +150,52 @@ var virar = document.querySelector('.menu span');
 menu.addEventListener('click', function (conteudo) {
   menu2.classList.toggle('ativar');
 });
-menu2.addEventListener('clickout');
+
+// menu mobile - dropdown
+var itenspai = document.querySelectorAll('.seletor');
+var dropdownMenu = document.querySelectorAll('.drop-menu');
+
+itenspai.forEach(function (conteudo, index) {
+  conteudo.addEventListener('click', function (contuedo2, index2) {
+    dropdownMenu[index].classList.toggle('drop');
+  });
+});
+document.addEventListener('click', (e) => {
+  if (!menu2.contains(e.target) && e.target !== menu) {
+    menu2.classList.remove('ativar');
+    dropdownMenu.forEach(function (conteudo, index) {
+      conteudo.classList.remove('drop');
+    });
+  }
+});
+
+// numeros animados
+var divNum = document.querySelector('.numeros');
+function numeros2() {
+  var numeros = document.querySelectorAll('.numeros p');
+  numeros.forEach(function (conteudo) {
+    const total = +conteudo.textContent;
+    const incremento = Math.floor(total / 110);
+    let start = 0;
+    const timer = setInterval(() => {
+      start = start + incremento;
+      conteudo.innerHTML = start;
+      if (start > total) {
+        clearInterval(timer);
+      }
+    }, 10);
+    conteudo.innerHTML = total;
+  });
+}
+var config = { attributes: true };
+var observer = new MutationObserver(handleMutation);
+function handleMutation(mutation) {
+  if (mutation[0].target.classList.contains('scrollativo')) {
+    observer.disconnect();
+    numeros2();
+  }
+}
+observer.observe(divNum, config);
+observer.observe(divNum, { attributes: true });
+
+//
